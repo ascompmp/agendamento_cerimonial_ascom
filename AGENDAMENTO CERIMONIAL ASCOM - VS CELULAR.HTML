@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Agendamento Cerimonial/Ascom</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        #clock {
+            margin-top: 20px;
+            font-size: 48px; /* Reduzido o tamanho da fonte para dispositivos móveis */
+            color: #333;
+        }
+
+        #author {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">CONTROLE DE AGENDAMENTO CERIMONIAL / ASCOM</h1>
+    <div class="container">
+        <a href="https://www.supersaas.com.br/schedule/Cerimonial_ascom/AUDIT%C3%93RIO_CL%C3%8ANIO_JOS%C3%89" class="button">AUDITÓRIO CLÊNIO JOSÉ</a>
+        <a href="https://www.supersaas.com.br/schedule/Cerimonial_ascom/SALA_DE_REUNI%C3%83O" class="button">SALA DE REUNIÃO</a>
+        <a href="https://www.supersaas.com.br/dashboard/login" class="button">FAZER AGENDAMENTO</a>
+        <div id="clock"></div>
+        <div id="author">Criado por: Aristelson Alves</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();  // Initial call to display clock immediately
+    </script>
+</body>
+</html>
